@@ -14,9 +14,10 @@ export default function Web()
         
         
         try{
-            const response= await fetch(
-                `http://api.weatherapi.com/v1/current.json?key=a92283c03b09409992670329252911&q=${city}&aqi=yes`
-            );
+           const response = await fetch(
+  `https://api.weatherapi.com/v1/current.json?key=${import.meta.env.VITE_API_KEY}&q=${city}&aqi=yes`
+);
+
             if(!response.ok){
                 throw new Error(`HTTP eror! status :${response.status}`);
             }
